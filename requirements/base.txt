@@ -1,0 +1,31 @@
+# ---------- Numerical ----------
+numpy
+scipy
+
+# ---------- Data ----------
+pandas
+
+# ---------- Visualization ----------
+matplotlib
+
+# ---------- Utilities ----------
+tqdm
+requests
+
+# ---------- Image ----------
+Pillow
+
+# ---------- Notebook ----------
+jupyter
+ipykernel
+
+# ---------- Environment ----------
+python-dotenv
+
+# ---------- Formatting / Quality ----------
+black
+isort
+flake8
+
+# ---------- Testing ----------
+pytest

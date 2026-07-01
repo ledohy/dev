@@ -1,0 +1,5 @@
+-r ai.txt
+
+gymnasium
+pygame
+stable-baselines3
