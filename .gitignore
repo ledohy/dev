@@ -20,3 +20,16 @@ node_modules/
 dist/
 build/
 *.egg-info/
+
+# Large model/data files
+*.h5
+*.weights
+*.pb
+*.pt
+*.pth
+*.onnx
+*.ckpt
+
+# Data / models
+data/
+models/
