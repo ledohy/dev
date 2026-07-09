@@ -14,6 +14,5 @@ while True:
     print(env.render())
     if terminated or truncated:
         break
-    
-    
+
 env.close()
