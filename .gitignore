@@ -33,3 +33,6 @@ build/
 # Data / models
 data/
 models/
+
+#Project
+projects/
