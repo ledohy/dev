@@ -14,8 +14,8 @@ def policy_iteration(env):
                 prob, next_state, reward, terminated = env.unwrapped.P[state][action][0]
                 v = reward + gamma*V[next_state]
                 V[state] = v
-                if max(np.abs(V-oldV)) < 1e-8:
-                    break
+            if max(np.abs(V-oldV)) < 1e-8:
+                break
 
         converged = True
         for state in range(env.observation_space.n):
@@ -31,8 +31,12 @@ def policy_iteration(env):
             break
     return V, pi
 
-env = gym.make("FrozenLake-v1", is_slippery=False, render_mode="ansi")
+def main():
+    env = gym.make("FrozenLake-v1", is_slippery=False, render_mode="ansi")
 
-V, pi = policy_iteration(env)
-print("최적 정책:\n", np.array(pi).reshape([4,4]))
-print("최적 가치 함수:\n", np.round(V.reshape([4,4]),4))
+    V, pi = policy_iteration(env)
+    print("최적 정책:\n", np.array(pi).reshape([4,4]))
+    print("최적 가치 함수:\n", np.round(V.reshape([4,4]),4))
+
+if __name__ == "__main__":
+    main()
