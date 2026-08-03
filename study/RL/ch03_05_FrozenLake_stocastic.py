@@ -12,7 +12,7 @@ def value_iteration(env):
             for action in range(env.action_space.n):
                 for prob, next_state, reward, terminated in env.unwrapped.P[state][action]:
                     q[action] = q[action] + prob*(reward+gamma*V[next_state])
-                V[state] = np.max(q)
+            V[state] = np.max(q)
         if max(np.abs(V-oldV)) < 1e-8:
             break
 
@@ -22,8 +22,8 @@ def value_iteration(env):
         for action in range(env.action_space.n):
             for prob, next_state, reward, terminated in env.unwrapped.P[state][action]:
                 q[action] = q[action] + prob*(reward + gamma*V[next_state])
-            pi[state] = np.argmax(q)
-        return pi, V
+        pi[state] = np.argmax(q)
+    return pi, V
 
 def main():
     env = gym.make("FrozenLake-v1", is_slippery=True, render_mode="ansi")
